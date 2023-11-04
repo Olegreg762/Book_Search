@@ -1,10 +1,21 @@
 const express = require('express');
 const path = require('path');
+// const routes = require('./routes');
+const {Apolloserver} = require('@apollo/server');
+const {expressMiddleware} = require('@apollo/server/express4');
+const{authMiddleware} = require('./utils/auth');
+
 const db = require('./config/connection');
-const routes = require('./routes');
+const {typeDefs, resolvers} = require('./schemas');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const server = new Apolloserver({
+  typeDefs,
+  resolvers
+});
+
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
