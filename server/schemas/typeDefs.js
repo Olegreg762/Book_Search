@@ -1,6 +1,6 @@
 module.exports = typeDefs = `
     type Query {
-        me: User
+        checkLoggedIn: User
     }
 
     type User {
