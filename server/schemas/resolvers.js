@@ -1,5 +1,6 @@
-const {Profile} = require('../models');
-const {signToken, AuthenticationError} = require('../utils/auth');
+const {User, Book} = require('../models');
+const {signToken} = require('../utils/auth');
+const {AuthenticationError} = require('apollo-server-express');
 
 module.exports = resolvers = {
     
